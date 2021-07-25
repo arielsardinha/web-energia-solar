@@ -10,7 +10,22 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
+p,
+h3 {
+  margin: 0px;
+}
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+}
+:root {
+  --blue-light: #0B435D;
+  --blue-black: #303c44;
+  --cor-principal: #fd6d04;
+  --cor-principal-hover: #ff984e;
+  --branco: #fff;
+}
+.xxl{
+  max-width: 1400px !important;
 }
