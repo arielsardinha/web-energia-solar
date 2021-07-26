@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "@material-ui/core";
-import { TituloBox } from "./sessao2Produtos.style";
+import { TituloBox, BoxProposito,Imagem } from "./sessao2Produtos.style";
 
 const SessaoProdutos = () => (
   <>
@@ -15,7 +15,37 @@ const SessaoProdutos = () => (
       </Container>
     </TituloBox>
     <Container>
-    </Container> 
+      <BoxProposito>
+        <aside className="txt-top">
+          <div>
+            <h1>Nosso proposito</h1>
+            <p>
+              Temos uma rede de parceiros instaladores em todos os estados do
+              Brasil que executa o projeto de energia solar no telhado do seu
+              imóvel e você paga em até 120x com juros muito acessíveis. Tão
+              acessíveis que a prestação mensal fica até 30% inferior à economia
+              de energia que você tem com o sistema.
+            </p>
+          </div>
+          <Imagem src="./Rectangle163.png" alt="" />
+        </aside>
+      </BoxProposito>
+      <BoxProposito>
+        <aside className="txt-bottom">
+          <div>
+            <h1>Nosso proposito</h1>
+            <p>
+              Temos uma rede de parceiros instaladores em todos os estados do
+              Brasil que executa o projeto de energia solar no telhado do seu
+              imóvel e você paga em até 120x com juros muito acessíveis. Tão
+              acessíveis que a prestação mensal fica até 30% inferior à economia
+              de energia que você tem com o sistema.
+            </p>
+          </div>
+          <Imagem src="./Rectangle99.png" alt="" />
+        </aside>
+      </BoxProposito>
+    </Container>
   </>
 );
 

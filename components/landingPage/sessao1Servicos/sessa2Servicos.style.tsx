@@ -1,5 +1,5 @@
 import { styled } from "@material-ui/core";
-export const Sessao = styled("div")`
+export const Sessao = styled("aside")`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
