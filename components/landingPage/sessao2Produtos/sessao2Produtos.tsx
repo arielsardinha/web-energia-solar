@@ -1,6 +1,11 @@
 import React from "react";
 import { Container } from "@material-ui/core";
-import { TituloBox, BoxProposito,Imagem } from "./sessao2Produtos.style";
+import {
+  TituloBox,
+  BoxProposito,
+  Imagem,
+  BoxPropositosBottom,
+} from "./sessao2Produtos.style";
 
 const SessaoProdutos = () => (
   <>
@@ -45,6 +50,51 @@ const SessaoProdutos = () => (
           <Imagem src="./Rectangle99.png" alt="" />
         </aside>
       </BoxProposito>
+      <BoxPropositosBottom>
+        <h1>Nosso proposito</h1>
+        <div className="box-item">
+          <aside>
+            <p>X</p>
+            <h3>Nosso proposito</h3>
+            <p>
+              A Solfácil é a primeira plataforma digital para investimentos em
+              energia solar do Brasil. Nós temos uma linha de financiamento
+              revolucionária que permite que você troque o custo da sua conta de
+              luz por um ótimo investimento em um sistema de energia solar.
+            </p>
+          </aside>
+          <aside>
+            <p>X</p>
+            <h3>Nosso proposito</h3>
+            <p>
+              A Solfácil é a primeira plataforma digital para investimentos em
+              energia solar do Brasil. Nós temos uma linha de financiamento
+              revolucionária que permite que você troque o custo da sua conta de
+              luz por um ótimo investimento em um sistema de energia solar.
+            </p>
+          </aside>
+          <aside>
+            <p>X</p>
+            <h3>Nosso proposito</h3>
+            <p>
+              A Solfácil é a primeira plataforma digital para investimentos em
+              energia solar do Brasil. Nós temos uma linha de financiamento
+              revolucionária que permite que você troque o custo da sua conta de
+              luz por um ótimo investimento em um sistema de energia solar.
+            </p>
+          </aside>
+          <aside>
+            <p>X</p>
+            <h3>Nosso proposito</h3>
+            <p>
+              A Solfácil é a primeira plataforma digital para investimentos em
+              energia solar do Brasil. Nós temos uma linha de financiamento
+              revolucionária que permite que você troque o custo da sua conta de
+              luz por um ótimo investimento em um sistema de energia solar.
+            </p>
+          </aside>
+        </div>
+      </BoxPropositosBottom>
     </Container>
   </>
 );
