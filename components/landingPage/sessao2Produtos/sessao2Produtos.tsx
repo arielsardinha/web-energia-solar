@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "@material-ui/core";
+import Grafico from "./grafico";
 import {
   TituloBox,
   BoxProposito,
@@ -95,6 +96,7 @@ const SessaoProdutos = () => (
           </aside>
         </div>
       </BoxPropositosBottom>
+      <Grafico />
     </Container>
   </>
 );
