@@ -77,11 +77,11 @@ const MenuNav = () => {
                 height: "50px",
               }}
             ></div>
-            <a href={"#"}>Home</a>
+            <a href={""}>Home</a>
             <a href={"#"}>Produtos</a>
             <a href={"#"}>Simulação</a>
           </div>
-          <LinkAcesso href={"http://localhost:3000/login/Login"}>
+          <LinkAcesso href={"http://localhost:3000/login/"}>
             Acesse já
           </LinkAcesso>
         </Nav>

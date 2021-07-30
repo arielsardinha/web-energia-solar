@@ -9,7 +9,7 @@ import { Container } from "@material-ui/core";
 
 const SessaoServicos= () => (
   <Container>
-    <TipoDeCliente>
+    {/* <TipoDeCliente>
       <div className="txt-topo">
         <p>Venha utilizar nossa plataforma:</p>
       </div>
@@ -32,7 +32,7 @@ const SessaoServicos= () => (
           <p className="select">Você está aqui !</p>
         </div>
       </div>
-    </TipoDeCliente>
+    </TipoDeCliente> */}
     <h1>
       Venha investir em energia solar
       <br />

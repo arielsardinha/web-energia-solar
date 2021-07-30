@@ -1,0 +1,4 @@
+1 % ao mes 
+pegar o valor do slider multiplicar por 1% ao mes
+
+token http://api.solarangels.com.br/public/api/auth/login
