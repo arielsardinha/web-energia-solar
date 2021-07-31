@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../src/contexts/AuthContext";
 import { api } from "../../src/services/api";
-import { getAPIClient } from "../../src/services/axios";
+
 
 function Sistema() {
   const { user } = useContext(AuthContext);
@@ -24,7 +24,6 @@ function Sistema() {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const apiClient = getAPIClient(ctx);
 
   // pega o token
   const { ["nextauth-token"]: token } = parseCookies(ctx);
@@ -38,8 +37,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       },
     };
   }
-
-  // await apiClient.get("/users");
 
   return {
     props: {},

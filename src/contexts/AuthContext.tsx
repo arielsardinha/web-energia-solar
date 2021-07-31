@@ -57,6 +57,7 @@ export function AuthProvider({ children }) {
     // informações do usuario logado
     // dessa forma faz com que o cook busca o usuario de dentro do banco para
     setUser(user);
+    
 
     // biblioteca next que leva o usuario para a rota desejada
     Router.push("/sistema");

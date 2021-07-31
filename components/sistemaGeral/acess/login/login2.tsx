@@ -7,21 +7,30 @@ import {
   FormElementsContainer,
 } from "../components/componentes";
 import Image from "next/image";
-// import { Typography, CircularProgress } from "@material-ui/core";
-// import useIndex from "../../../../public/hooks/useAcess";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../../../src/contexts/AuthContext";
+import axios from "axios";
+
 const LoginCadastro2 = () => {
   const { register, handleSubmit } = useForm();
 
-    //  pega a função que esta dentro da AuthContext
-  const {signIn} = useContext(AuthContext)
+  //  pega a função que esta dentro da AuthContext
+  const { signIn } = useContext(AuthContext);
 
   async function handleSignIn(data) {
-    //   aqui vou ter acesso aos dados do formulario que foram enviados
-    // ideal fazer um try catch para a requisição que esta vindo
-    await signIn(data)
+    // pegando os dados que estao sendo retornados do input e enviando pro banco de dados para ser validado e retornando o token.
+    console.log(data);
+    axios
+      .post("https://musicloud-backend.herokuapp.com/user/login", data)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    // await signIn(data);
   }
 
   return (
@@ -55,7 +64,11 @@ const LoginCadastro2 = () => {
           </div>
 
           <div className="btnEntrar">
-            <Button_Enviar variant={"contained"} sx={{ width: "220px" }} type={'submit'}>
+            <Button_Enviar
+              variant={"contained"}
+              sx={{ width: "220px" }}
+              type={"submit"}
+            >
               Entrar
             </Button_Enviar>
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import InputMask from "react-input-mask";
-import useIndex from "../../../../public/hooks/useAcess";
+import useIndex from "../../../../src/hooks/useAcess";
 import { Typography } from "@material-ui/core";
 import {
   Conteudo,

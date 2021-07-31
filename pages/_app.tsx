@@ -1,4 +1,3 @@
-import { AuthContext } from "../src/contexts/AuthContext";
 import "../styles/globals.css";
 import { AuthProvider } from "../src/contexts/AuthContext";
 

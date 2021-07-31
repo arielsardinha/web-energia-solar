@@ -8,7 +8,7 @@ import {
 } from "../components/componentes";
 import Image from "next/image";
 import { Typography, CircularProgress } from "@material-ui/core";
-import useIndex from "../../../../public/hooks/useAcess";
+import useIndex from "../../../../src/hooks/useAcess";
 const LoginCadastro = () => {
   const {
     email,
