@@ -19,18 +19,7 @@ const LoginCadastro2 = () => {
   const { signIn } = useContext(AuthContext);
 
   async function handleSignIn(data) {
-    // pegando os dados que estao sendo retornados do input e enviando pro banco de dados para ser validado e retornando o token.
-    console.log(data);
-    axios
-      .post("https://musicloud-backend.herokuapp.com/user/login", data)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    // await signIn(data);
+    await signIn(data);
   }
 
   return (

@@ -1,7 +1,5 @@
 import { useState } from "react";
 export default function useIndex() {
-  let resEmail = "email@email";
-  let resSenha = 123;
 
   const [email, setEmail] = useState(""),
     [nome, setNome] = useState(""),

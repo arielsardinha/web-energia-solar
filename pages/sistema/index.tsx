@@ -1,30 +1,27 @@
+import axios from "axios";
 import { GetServerSideProps } from "next";
 import { parseCookies } from "nookies";
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../src/contexts/AuthContext";
-import { api } from "../../src/services/api";
-
+// import { api } from "../../src/services/api";
 
 function Sistema() {
   const { user } = useContext(AuthContext);
-
   useEffect(() => {
-    api.get("/users");
+    axios
+      .get("http://api.solarangels.com.br/public/api/roof-structure")
+      .then((res) => console.log(res.data));
   }, []);
 
   return (
     <div>
       <div>sistema</div>
-      <p>{user.name}</p>
-      <p>{user.email}</p>
     </div>
   );
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-
   // pega o token
   const { ["nextauth-token"]: token } = parseCookies(ctx);
 

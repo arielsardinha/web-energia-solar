@@ -1,4 +1,3 @@
-import { v4 as uuid } from "uuid";
 import axios from "axios";
 
 type SignInRequestData = {
@@ -6,23 +5,19 @@ type SignInRequestData = {
   password: string;
 };
 
-
-// promisses para simular o tempo de requisição
-// const delay = (amount = 750) =>
-//   new Promise((resolve) => setTimeout(resolve, amount));
-
 //  função que simula uma chamada API
 export async function signInRequest(data: SignInRequestData) {
-  // await delay();
-
-  return {
-    // uuid ela gera um id unico universal
-    token: uuid(),
-    user: {
-      name: "ariel",
-      email: "res",
-    },
-  };
+  return await axios
+    .post("http://api.solarangels.com.br/public/api/auth/login", data)
+    .then((res) => {
+      return {
+        token: res.data.access_token,
+        user: {
+          name: res.data.name,
+          email: res.data.state,
+        },
+      };
+    });
 }
 
 // função que recebe o token e devolve as informações do usuario que tem o token

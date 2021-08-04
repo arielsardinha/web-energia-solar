@@ -4,7 +4,7 @@ import { setCookie, parseCookies } from "nookies";
 import { useState } from "react";
 import { recoverUserInformation, signInRequest } from "../services/auth";
 import { useEffect } from "react";
-import { api } from "../services/api";
+// import { api } from "../services/api";
 type User = {
   name: string;
   email: string;
@@ -52,7 +52,7 @@ export function AuthProvider({ children }) {
     });
 
     // faz com que toda vez que o usuario realize a autenticação seja gerado um novo token
-    api.defaults.headers["Autorization"] = `Bearer ${token}`;
+    // api.defaults.headers["Autorization"] = `Bearer ${token}`;
 
     // informações do usuario logado
     // dessa forma faz com que o cook busca o usuario de dentro do banco para
