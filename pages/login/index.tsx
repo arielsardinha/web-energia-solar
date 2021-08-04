@@ -1,10 +1,10 @@
 import React from "react";
-import LoginCadastro2 from "../../components/sistemaGeral/acess/login/login2";
+import LoginCadastro from "../../components/sistemaGeral/acess/login/login";
 import Cadastro from "../../components/sistemaGeral/acess/formulario/Cadastro";
 
 const Login = () => (
   <div>
-    <LoginCadastro2 />
+    <LoginCadastro />
   </div>
 );
 

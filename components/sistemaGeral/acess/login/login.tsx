@@ -7,18 +7,21 @@ import {
   FormElementsContainer,
 } from "../components/componentes";
 import Image from "next/image";
-import { Typography, CircularProgress } from "@material-ui/core";
-import useIndex from "../../../../src/hooks/useAcess";
+import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { AuthContext } from "../../../../src/contexts/AuthContext";
+import axios from "axios";
+
 const LoginCadastro = () => {
-  const {
-    email,
-    setEmail,
-    setSenha,
-    senha,
-    erro,
-    carregando,
-    verificarEmailESenha,
-  } = useIndex();
+  const { register, handleSubmit } = useForm();
+
+  //  pega a função que esta dentro da AuthContext
+  const { signIn } = useContext(AuthContext);
+
+  async function handleSignIn(data) {
+    await signIn(data);
+  }
+
   return (
     <Conteudo>
       <BoxTotal>
@@ -26,22 +29,23 @@ const LoginCadastro = () => {
           <Image src="/logo.png" alt="" width={150} height={150} />
           <h2>Formulário de login</h2>
         </div>
-        <FormElementsContainer>
+        {/* quando o usuario fizer um submit ele chama a função handleSignIn
+            a função handleSubmit faz algumas tratativas automaticamente
+        */}
+        <FormElementsContainer onSubmit={handleSubmit(handleSignIn)}>
           <TextFieldStyled
             label={"Email"}
             fullWidth
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
             type="email"
             required
+            {...register("email")}
           />
           <TextFieldStyled
             label={"Senha"}
             fullWidth
-            value={senha}
             type="password"
-            onChange={(event) => setSenha(event.target.value)}
             required
+            {...register("password")}
           />
           <div className="linkLogin">
             {/* <a href="http://localhost:3000/cadastro/cadastro">Criar Conta</a> */}
@@ -49,14 +53,12 @@ const LoginCadastro = () => {
           </div>
 
           <div className="btnEntrar">
-            {erro && <Typography color={"error"}>{erro}</Typography>}
             <Button_Enviar
               variant={"contained"}
               sx={{ width: "220px" }}
-              disabled={!email || !senha || carregando}
-              onClick={() => verificarEmailESenha(email, senha)}
+              type={"submit"}
             >
-              {carregando ? <CircularProgress /> : "Entrar"}
+              Entrar
             </Button_Enviar>
           </div>
         </FormElementsContainer>
