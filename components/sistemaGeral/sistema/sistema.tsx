@@ -22,17 +22,18 @@ import { api } from "../../../src/services/api";
 
 const HomeSistema = () => {
   const [telhas, setTelhas] = useState([]);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   function deletar(id) {
     api.delete(`/roof-structure/${id}`);
   }
 
   useEffect(() => {
+    console.log('procurando')
     api
-      .get("/roof-structure")
+      .get(`/roof-structure`)
       .then((res) => setTelhas(res.data.roof_structures));
   }, []);
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -114,7 +115,6 @@ const HomeSistema = () => {
           </Container>
         </BoxMenu>
         <BoxUsinas>
-          <input type="text" placeholder={"pesquisar"} />
           <div className="selecao">
             <h2>Usina</h2>
             <h2>
@@ -136,7 +136,6 @@ const HomeSistema = () => {
                   ))}
                 </td>
                 <td>
-                  {console.log(telhas)}
                   {telhas.map((telha) => (
                     <div key={telha.id}>
                       <Link href={`/sistema/editar/${telha.id}`}>editar</Link>

@@ -23,9 +23,13 @@ const EditarId = () => {
     Router.push("/sistema");
   }
 
-  api
-    .get(`roof-structure/${id}`)
-    .then((res) => setTelhas(res.data.roof_structure.roof_structure));
+  useEffect(() => {
+    if (id) {
+      api
+        .get(`roof-structure/${id}`)
+        .then((res) => setTelhas(res.data.roof_structure.roof_structure));
+    }
+  }, []);
 
   return (
     <BoxFormETexto>
