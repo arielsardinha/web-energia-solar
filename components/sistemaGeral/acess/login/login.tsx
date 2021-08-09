@@ -10,7 +10,6 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../../../src/contexts/AuthContext";
-import axios from "axios";
 
 const LoginCadastro = () => {
   const { register, handleSubmit } = useForm();

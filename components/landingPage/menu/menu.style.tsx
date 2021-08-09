@@ -25,8 +25,8 @@ export const Nav = styled("nav")`
       color: var(--blue-light);
       margin: ${({ theme }) => theme.spacing(0, 0, 0, 4)};
       font-weight: 700;
-      &:hover {
-        color: var(--blue-light);
+      :hover {
+        color: var(--cor-principal-hover);
         text-decoration: none;
       }
     }

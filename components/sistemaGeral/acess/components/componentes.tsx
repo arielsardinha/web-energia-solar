@@ -1,4 +1,4 @@
-import { styled } from "@material-ui/core";
+import { Link, styled } from "@material-ui/core";
 import { TextField } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 
@@ -189,3 +189,50 @@ export const FormInvestidor = styled("div")`
   }
 `;
 export const FormUsina = styled("div")``;
+
+export const MenuLateral = styled("div")`
+  background-color: var(--blue-light);
+  width: 100px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  a {
+    margin: ${({ theme }) => theme.spacing(2, 0)};
+    color: white;
+    :hover {
+      color: var(--cor-principal-hover);
+    }
+  }
+  .target {
+    color: var(--cor-principal);
+  }
+`;
+export const QualUsuario = styled("p")`
+  background-color: var(--blue-light);
+  padding: ${({ theme }) => theme.spacing(1, 10)};
+  border-radius: ${({ theme }) => theme.spacing()};
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+`;
+export const BoxUsinas = styled("div")`
+  margin-top: 90px;
+  margin-left: 30px;
+  .selecao {
+    background-color: var(--blue-light);
+    color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: ${({ theme }) => theme.spacing(1)};
+    a {
+    :hover {
+      color: var(--cor-principal-hover);
+    }
+  }
+    h2 {
+      margin: ${({ theme }) => theme.spacing(0, 3)};
+    }
+  }
+`;

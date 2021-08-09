@@ -17,7 +17,6 @@ const MenuNav = () => {
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
-    console.log(event.currentTarget);
   };
 
   const handleClose = () => {

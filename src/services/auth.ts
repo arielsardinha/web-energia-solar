@@ -17,18 +17,27 @@ export async function signInRequest(data: SignInRequestData) {
           email: res.data.state,
         },
       };
+    })
+    .catch(function (res) {
+      return {
+        token: null,
+        user: {
+          name: null,
+          email: null,
+        },
+      };
     });
 }
 
 // função que recebe o token e devolve as informações do usuario que tem o token
 // precisa receber o token do back para poder fazer a validação do token e retornar o usuario
-export async function recoverUserInformation() {
-  // await delay();
+// export async function recoverUserInformation() {
+// await delay();
 
-  return {
-    user: {
-      name: "ariel",
-      email: "email@email",
-    },
-  };
-}
+//   return {
+//     user: {
+//       name: "ariel",
+//       email: "email@email",
+//     },
+//   };
+// }

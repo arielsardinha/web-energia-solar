@@ -2,8 +2,7 @@ import { createContext } from "react";
 import Router from "next/router";
 import { setCookie, parseCookies } from "nookies";
 import { useState } from "react";
-import { recoverUserInformation, signInRequest } from "../services/auth";
-import { useEffect } from "react";
+import { signInRequest } from "../services/auth";
 // import { api } from "../services/api";
 type User = {
   name: string;
@@ -26,14 +25,14 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState<User | null>(null);
   const isAuthenticated = !!user;
 
-  useEffect(() => {
-    //   estou pegando o nome do meu token e renomeando ele
-    const { "nextauth-token": token } = parseCookies();
-    if (token) {
-      // vai atualizar o usuario
-      recoverUserInformation().then((res) => setUser(res.user));
-    }
-  }, []);
+  // useEffect(() => {
+  //   estou pegando o nome do meu token e renomeando ele
+  // const { "nextauth-token": token } = parseCookies();
+  // if (token) {
+  // vai atualizar o usuario
+  //     recoverUserInformation().then((res) => setUser(res.user));
+  //   }
+  // }, []);
   // função de autenticação com a data desestruturada
   async function signIn({ email, password }: SignInData) {
     // seria o lugar correto que se chama a api envia o email e senha e salva o token
@@ -57,7 +56,6 @@ export function AuthProvider({ children }) {
     // informações do usuario logado
     // dessa forma faz com que o cook busca o usuario de dentro do banco para
     setUser(user);
-    
 
     // biblioteca next que leva o usuario para a rota desejada
     Router.push("/sistema");
