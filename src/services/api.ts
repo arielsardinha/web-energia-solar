@@ -10,10 +10,10 @@ export const api = axios.create({
 });
 
 // // só pra ver os dados que estao sendo enviados
-// api.interceptors.request.use((config) => {
-//   console.log(config);
-//   return config;
-// });
+api.interceptors.request.use((config) => {
+  console.log(config);
+  return config;
+});
 // // autenticação jwt
 // // verifica se ja existe um token para preencher a informação
 if (token) {

@@ -32,7 +32,7 @@ const HomeSistema = () => {
     console.log('procurando')
     api
       .get(`/roof-structure`)
-      .then((res) => setTelhas(res.data.roof_structures));
+      .then((res) => console.log(res));
   }, []);
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -114,7 +114,7 @@ const HomeSistema = () => {
             </Nav>
           </Container>
         </BoxMenu>
-        <BoxUsinas>
+        {/* <BoxUsinas>
           <div className="selecao">
             <h2>Usina</h2>
             <h2>
@@ -148,7 +148,7 @@ const HomeSistema = () => {
               </tr>
             </tbody>
           </table>
-        </BoxUsinas>
+        </BoxUsinas> */}
       </div>
     </div>
   );
